@@ -4,7 +4,7 @@ from threading import Thread
 from time import time, sleep
 from math import sqrt
 
-INTRINSIC_DELAY = 100
+INTRINSIC_DELAY = 200
 DELAY_VAR = 100
 WEIBULL_SHAPE = 2
 

@@ -44,11 +44,11 @@ LIM_JOY_Y_DOWN = (127,31)
 # Arm limit values
 ARM_H_MIN = 0
 ARM_H_MAX = 180
-ARM_V_MIN = 60
+ARM_V_MIN = 70
 ARM_V_MAX = 180
-WRIST_MIN = 60
+WRIST_MIN = 0
 WRIST_MAX = 180
-GRASP_MIN = 0
+GRASP_MIN = 50
 GRASP_MAX = 180
 
 # Sampling loop time
@@ -81,27 +81,27 @@ if __name__ == '__main__':
 				# Check which movement is stronger (for/back or turn)
 				if abs(y) < abs(x): # Y strongerclose_grasp
 					if y < 0 and y > -120:
-						speed = 100
+						speed = 255
 						if y < (LIM_Y_DOWN[1] - 10):
-							speed = translate(y, LIM_Y_DOWN[1] - 10, LIM_Y_DOWN[0], 100, 60)
+							speed = translate(y, LIM_Y_DOWN[1] - 10, LIM_Y_DOWN[0], 255, 200)
 						delayer.add_action("forward", speed)
 					elif y > 0 and y < 120:
-						speed = 100
+						speed = 255
 						if y > (LIM_Y_UP[0] + 10):
-							speed = translate(y, LIM_Y_UP[0] + 10, LIM_Y_UP[1], 100, 60)
+							speed = translate(y, LIM_Y_UP[0] + 10, LIM_Y_UP[1], 255, 200)
 						delayer.add_action("backward", speed)
 					else:
 						delayer.add_action("stop", 0)
 				else: # X stronger
 					if x < 0 and x > -120:
-						speed = 100
+						speed = 255
 						if x < (LIM_X_RIGHT[1] - 10):
-							speed = translate(x, LIM_X_RIGHT[1] - 10, LIM_X_RIGHT[0], 100, 60)
+							speed = translate(x, LIM_X_RIGHT[1] - 10, LIM_X_RIGHT[0], 255, 200)
 						delayer.add_action("right", speed)
 					elif x > 0 and x < 120:
-						speed = 100
+						speed = 255
 						if x > (LIM_X_LEFT[0] + 10):
-							speed = translate(x, LIM_X_LEFT[0] + 10, LIM_X_LEFT[1], 100, 60)
+							speed = translate(x, LIM_X_LEFT[0] + 10, LIM_X_LEFT[1], 255, 200)
 						delayer.add_action("left", speed)
 					else:
 						delayer.add_action("stop", 0)
