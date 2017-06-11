@@ -8,8 +8,7 @@ The controller is a Wii's Nunchuck (https://github.com/Butakus/NunchuckControlle
 
 ## Author
 Francisco Miguel Moreno
-* butakus@gmail.com
-* twitter.com/butakus
+* butakus[at]gmail.com
 
 ## TODO
 * Finish documentation.
